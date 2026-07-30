@@ -4,7 +4,7 @@ import { setCookie, COOKIE_NAME } from '../utils/cookies';
 import { Cpu, AlertCircle, RefreshCw } from 'lucide-react';
 
 const GOOGLE_CLIENT_ID = "290716376602-o34ee961teqln77hbq81fpmfmgnebm0e.apps.googleusercontent.com";
-const BACKEND_AUTH_URL = window.location.hostname === 'localhost' ? "http://localhost:5000/auth/google" : "/auth/google";
+const BACKEND_AUTH_URL = "http://localhost:5000/auth/google";
 
 export const LoginPage = () => {
   const { loginWithGoogle } = useAuth();
@@ -94,7 +94,7 @@ export const LoginPage = () => {
         setCookie(COOKIE_NAME, googleIdToken, 7);
         loginWithGoogle(userObj, googleIdToken);
       } else {
-        setErrorMsg('Unable to connect to auth backend.');
+        setErrorMsg('Unable to connect to auth backend. Please verify http://localhost:5000 is running.');
       }
     } finally {
       setIsLoggingIn(false);
