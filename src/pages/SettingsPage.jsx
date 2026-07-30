@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Key, Copy, Check, ShieldCheck, Sparkles, Plus, Trash2, Code, AlertTriangle, RefreshCw } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-
-const BACKEND_TOKENS_URL = "http://localhost:5000/tokens";
+import { BACKEND_TOKENS_URL } from '../config/env';
 
 export const SettingsPage = ({ tokens: initialMockTokens, setTokens: setMockTokens }) => {
   const { user, token: authSessionToken } = useAuth();

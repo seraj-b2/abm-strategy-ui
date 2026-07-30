@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { setCookie, COOKIE_NAME } from '../utils/cookies';
 import { Cpu, AlertCircle, RefreshCw } from 'lucide-react';
-
-const GOOGLE_CLIENT_ID = "290716376602-o34ee961teqln77hbq81fpmfmgnebm0e.apps.googleusercontent.com";
-const BACKEND_AUTH_URL = "http://localhost:5000/auth/google";
+import { GOOGLE_CLIENT_ID, BACKEND_AUTH_URL } from '../config/env';
 
 export const LoginPage = () => {
   const { loginWithGoogle } = useAuth();
